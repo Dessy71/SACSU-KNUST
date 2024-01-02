@@ -148,7 +148,7 @@ button {
   /* Media query for small screens */
 @media screen and (max-width: 767px) {
   header {
-      padding: 1.6px; /* Adjust padding as needed for smaller screens */
+      padding: 3px; /* Adjust padding as needed for smaller screens */
   }
 
   .logo img {
@@ -156,12 +156,12 @@ button {
   }
 
   form {
-      max-width: 250px; /* Adjust the max-width as needed for smaller screens */
-      margin: 20px auto; /* Adjust the margin as needed for smaller screens */
+      max-width: 400px; /* Adjust the max-width as needed for smaller screens */
+      margin: 30px auto; /* Adjust the margin as needed for smaller screens */
   }
 
   table {
-      font-size: 8px; /* Adjust font size for smaller screens */
+      font-size: 10px; /* Adjust font size for smaller screens */
   }
 
   th, td {
