@@ -1,0 +1,204 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #00b09b, #96c93d);
+}
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000; /* You can set the background to your image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 1s ease-in-out; /* Add a smooth transition effect */
+}
+
+/* Style your image within the preloader */
+.preloader img {
+    max-width: 100%;
+    height: 50%;
+}
+header {
+    background-color: skyblue;
+    color: #fff;
+    padding: 2.6px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 50px; /* Adjust the height as needed */
+}
+
+form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+button {
+    background-color: skyblue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Confetti particles */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+    animation: fall 5s linear;
+    background-image: url('star.svg'); /* Replace 'star.svg' with the path to your star-shaped SVG */
+    background-size: cover;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+
+  /* Blue confetti */
+  .confetti-blue {
+    background-color: #0099ff71;
+  }
+
+  /* Violet confetti */
+  .confetti-violet {
+    background-color: #9933ff;
+  }
+
+  /* Gold confetti */
+  .confetti-gold {
+    background-color: #f5d109d2;
+  }
+
+  /* white confetti */
+  .confetti-white {
+    background-color: #ffffff;
+  }
+
+  /* pink confetti */
+  .confetti-pink {
+    background-color: rgba(255, 105, 180, 0.671);
+  }
+
+      /* Media query for small screens */
+      @media screen and (max-width: 767px) {
+    .confetti {
+      width: 6px;
+      height: 6px;
+    }
+  }
+
+  /* Media query for medium screens */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .confetti {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  /* Media query for large screens */
+  @media screen and (min-width: 1024px) {
+    .confetti {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  /* Media query for small screens */
+@media screen and (max-width: 767px) {
+  header {
+      padding: 1.6px; /* Adjust padding as needed for smaller screens */
+  }
+
+  .logo img {
+      max-height: 40px; /* Adjust the height as needed for smaller screens */
+  }
+
+  form {
+      max-width: 250px; /* Adjust the max-width as needed for smaller screens */
+      margin: 20px auto; /* Adjust the margin as needed for smaller screens */
+  }
+
+  table {
+      font-size: 8px; /* Adjust font size for smaller screens */
+  }
+
+  th, td {
+      padding: 8px; /* Adjust padding for smaller screens */
+  }
+
+  button {
+      padding: 8px 16px; /* Adjust padding for smaller screens */
+  }
+}
+
+/* Media query for medium screens */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  header {
+      padding: 2px; /* Adjust padding as needed for medium screens */
+  }
+
+  .logo img {
+      max-height: 45px; /* Adjust the height as needed for medium screens */
+  }
+
+  form {
+      max-width: 500px; /* Adjust the max-width as needed for medium screens */
+  }
+}
+
+/* Media query for large screens */
+@media screen and (min-width: 1024px) {
+  header {
+      padding: 3px; /* Adjust padding as needed for large screens */
+  }
+
+  .logo img {
+      max-height: 50px; /* Adjust the height as needed for large screens */
+  }
+
+  form {
+      max-width: 600px; /* Adjust the max-width as needed for large screens */
+  }
+}
