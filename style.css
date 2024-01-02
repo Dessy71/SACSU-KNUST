@@ -149,28 +149,29 @@ button {
 /* Media query for small screens */
 @media screen and (max-width: 767px) {
   header {
-      padding: 1.6px; /* Adjust padding as needed for smaller screens */
+      padding: 3px; /* Adjust padding as needed for smaller screens */
   }
 
   .logo img {
-      max-height: 40px; /* Adjust the height as needed for smaller screens */
+      max-height: 50px; /* Adjust the height as needed for smaller screens */
   }
 
   form {
-      max-width: 400px; /* Adjust the max-width as needed for smaller screens */
+      max-width:max-content; /* Adjust the max-width as needed for smaller screens */
       margin: 30px auto; /* Adjust the margin as needed for smaller screens */
+      max-height: max-content;
   }
 
   table {
-      font-size: 12px; /* Adjust font size for smaller screens */
+      font-size: 18px; /* Adjust font size for smaller screens */
   }
 
   th, td {
-      padding: 10px; /* Adjust padding for smaller screens */
+      padding: 18px; /* Adjust padding for smaller screens */
   }
 
   button {
-      padding: 8px 16px; /* Adjust padding for smaller screens */
+      padding: 10px 20px; /* Adjust padding for smaller screens */
   }
 }
 
