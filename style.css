@@ -146,9 +146,10 @@ button {
     }
   }
   /* Media query for small screens */
+/* Media query for small screens */
 @media screen and (max-width: 767px) {
   header {
-      padding: 3px; /* Adjust padding as needed for smaller screens */
+      padding: 1.6px; /* Adjust padding as needed for smaller screens */
   }
 
   .logo img {
@@ -161,11 +162,11 @@ button {
   }
 
   table {
-      font-size: 10px; /* Adjust font size for smaller screens */
+      font-size: 12px; /* Adjust font size for smaller screens */
   }
 
   th, td {
-      padding: 8px; /* Adjust padding for smaller screens */
+      padding: 10px; /* Adjust padding for smaller screens */
   }
 
   button {
