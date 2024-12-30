@@ -48,4 +48,4 @@ function createConfetti() {
   // Call the createConfetti function every 30 seconds (30000 milliseconds)
   setInterval(() => {
     createConfetti();
-  }, 15000);
+  }, 65000);
