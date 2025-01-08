@@ -1,12 +1,12 @@
-/* styles.css */
-
+/* General Styles */
 body {
     margin: 0;
     min-height: 100vh;
     padding: 0;
     font-family: Arial, sans-serif;
-    background:  #3637376b;
+    background: #3637376b;
 }
+
 .preloader {
     position: fixed;
     top: 0;
@@ -19,23 +19,23 @@ body {
     align-items: center;
     z-index: 1000;
     opacity: 1;
-    transition: opacity 1s ease-in-out; /* Add a smooth transition effect */
+    transition: opacity 1s ease-in-out;
 }
 
-/* Style your image within the preloader */
 .preloader img {
     max-width: 100%;
     height: 50%;
 }
+
+/* Header Styles */
 header {
     background-color: rgba(135, 207, 235, 0.738);
     color: #fff;
-    padding: 2.6px;
+    padding: 10px;
     position: sticky;
     top: 0;
     z-index: 1;
 }
-
 
 nav {
     display: flex;
@@ -44,47 +44,41 @@ nav {
 }
 
 .logo img {
-    max-height: 50px; /* Adjust the height as needed */
+    max-height: 50px;
 }
 
+/* Form Styles */
 form {
     max-width: 600px;
-    margin: 50px auto;
+    margin: 30px auto;
     padding: 20px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    align-content: center;
-    max-height: max-content;
-    max-width: max-content;
-    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-input, label {
+label, input, select {
     display: block;
     width: 100%;
-height: 25px;
-    margin-bottom: 25px
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
-table {
-    width: 100%;
-    margin-bottom: 25px}
-
-thead tr {
-    background-color: skyblue;
-    color: #fff;
-    font-weight: 500;
-}
-
-table, th, td {
+input, select {
+    height: 35px;
+    padding: 5px;
     border: 1px solid #458883;
-    border-collapse: collapse;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-th, td {
-    padding: 15px;
-    text-align: left;
+input:focus, select:focus {
+    outline: none;
+    border-color: #0099ff;
+    box-shadow: 0 0 5px rgba(0, 153, 255, 0.5);
 }
 
 button {
@@ -96,182 +90,114 @@ button {
     cursor: pointer;
     font-size: large;
 }
-/* Confetti particles */
+
+button:hover {
+    background-color: #0099ff;
+}
+
+/* Dropdown Custom Arrow */
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.select-wrapper select {
+    appearance: none;
+    cursor: pointer;
+}
+
+.select-wrapper::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #458883;
+    font-size: 14px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+thead tr {
+    background-color: skyblue;
+    color: white;
+    font-weight: bold;
+}
+
+th, td {
+    border: 1px solid #458883;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Confetti Styles */
 .confetti {
     position: fixed;
     width: 10px;
     height: 10px;
     pointer-events: none;
     animation: fall 5s linear;
-    background-image: url('star.svg'); /* Replace 'star.svg' with the path to your star-shaped SVG */
     background-size: cover;
-  }
+}
 
-  @keyframes fall {
+@keyframes fall {
     0% {
-      transform: translateY(-100%);
+        transform: translateY(-100%);
     }
     100% {
-      transform: translateY(100vh);
+        transform: translateY(100vh);
     }
-  }
+}
 
-  /* Blue confetti */
-  .confetti-blue {
-    background-color: #0099ff71;
-  }
+.confetti-blue { background-color: #0099ff71; }
+.confetti-violet { background-color: #9933ff; }
+.confetti-gold { background-color: #f5d109d2; }
+.confetti-white { background-color: #ffffff; }
+.confetti-pink { background-color: rgba(255, 105, 180, 0.671); }
 
-  /* Violet confetti */
-  .confetti-violet {
-    background-color: #9933ff;
-  }
-
-  /* Gold confetti */
-  .confetti-gold {
-    background-color: #f5d109d2;
-  }
-
-  /* white confetti */
-  .confetti-white {
-    background-color: #ffffff;
-  }
-
-  /* pink confetti */
-  .confetti-pink {
-    background-color: rgba(255, 105, 180, 0.671);
-  }
-
-      /* Media query for small screens */
-      @media screen and (max-width: 767px) {
-    .confetti {
-      width: 6px;
-      height: 6px;
-    }
-  }
-
-  /* Media query for medium screens */
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .confetti {
-      width: 8px;
-      height: 8px;
-    }
-  }
-
-  /* Media query for large screens */
-  @media screen and (min-width: 1024px) {
-    .confetti {
-      width: 10px;
-      height: 10px;
-    }
-  }
-  /* Media query for small screens */
-/* Media query for small screens */
+/* Responsive Styles */
 @media screen and (max-width: 767px) {
-  header {
-      padding: 3px; /* Adjust padding as needed for smaller screens */
-  }
+    header {
+        padding: 5px;
+    }
 
-  .logo img {
-      max-height: 50px; /* Adjust the height as needed for smaller screens */
-  }
+    .logo img {
+        max-height: 40px;
+    }
 
-  form {
-      max-width:max-content; /* Adjust the max-width as needed for smaller screens */
-      margin: 30px auto; /* Adjust the margin as needed for smaller screens */
-      max-height: max-content;
-  }
+    form {
+        max-width: 90%;
+        padding: 15px;
+    }
 
-  table {
-      font-size: 18px; /* Adjust font size for smaller screens */
-  }
+    table {
+        font-size: 14px;
+    }
 
-  th, td {
-      padding: 18px; /* Adjust padding for smaller screens */
-  }
+    th, td {
+        padding: 8px;
+    }
 
-  button {
-      padding: 10px 20px; /* Adjust padding for smaller screens */
-  }
+    button {
+        padding: 8px 20px;
+    }
 }
 
-/* Media query for medium screens */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  header {
-      padding: 10px; /* Adjust padding as needed for medium screens */
-  }
-
-  .logo img {
-      max-height: 60px; /* Adjust the height as needed for medium screens */
-  }
-
-  form {
-      max-width: 700px;
-      max-height: max-content; /* Adjust the max-width as needed for medium screens */
-  }
+    form {
+        max-width: 80%;
+    }
 }
 
-/* Media query for large screens */
 @media screen and (min-width: 1024px) {
-  header {
-      padding: 3px; /* Adjust padding as needed for large screens */
-  }
-
-  .logo img {
-      max-height: 50px; /* Adjust the height as needed for large screens */
-  }
-
-  form {
-      max-width: 600px; /* Adjust the max-width as needed for large screens */
-  }
-}
-
-select {
-    width: 100%; /* Full width */
-    padding: 10px; /* Inner padding */
-    font-size: 16px; /* Font size */
-    border: 1px solid #458883; /* Border style */
-    border-radius: 5px; /* Rounded corners */
-    background-color: #ffffff; /* Background color */
-    color: #333; /* Text color */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    appearance: none; /* Removes default dropdown arrow styling */
-    cursor: pointer; /* Pointer cursor on hover */
-}
-
-select:hover {
-    border-color: #0099ff; /* Highlight border on hover */
-}
-
-select:focus {
-    outline: none; /* Remove focus outline */
-    border-color: #458883; /* Highlight border on focus */
-    box-shadow: 0 0 5px rgba(69, 136, 131, 0.5); /* Add subtle shadow on focus */
-}
-
-select option {
-    background-color: #ffffff; /* Dropdown background */
-    color: #333; /* Dropdown text color */
-    padding: 10px; /* Padding for each option */
-}
-
-/* Custom arrow for dropdown */
-select::-ms-expand {
-    display: none; /* Remove default arrow in IE */
-}
-
-.select-wrapper {
-    position: relative; /* For custom arrow positioning */
-    display: inline-block;
-    width: 100%;
-}
-
-.select-wrapper::after {
-    content: "▼"; /* Custom arrow */
-    position: absolute;
-    top: 50%;
-    right: 15px; /* Adjust as needed */
-    transform: translateY(-50%);
-    pointer-events: none; /* Prevent arrow from blocking dropdown click */
-    color: #458883; /* Arrow color */
-    font-size: 14px; /* Adjust arrow size */
+    form {
+        max-width: 600px;
+    }
 }
