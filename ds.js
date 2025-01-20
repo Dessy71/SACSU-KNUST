@@ -56,16 +56,35 @@ function checkLevel100() {
     }
 }
 
-// Handle Form Submission and Display Success Message
+// Add this inside your handleSubmit function in the script.js
 function handleSubmit(event) {
-    event.preventDefault();
-    const form = document.getElementById("sacsuForm25");
+    event.preventDefault(); // Prevent actual form submission
 
-    const successMessage = document.getElementById("success-message");
-    successMessage.style.display = "block";
-    setTimeout(() => {
-        successMessage.style.display = "none";
-    }, 5000);
+    const formData = new FormData(event.target);  // Capture form data
 
-    form.reset();
+    // Log the form data before submission
+    let formDataObject = {};
+    formData.forEach((value, key) => {
+        formDataObject[key] = value;
+    });
+    console.log("Form data being submitted: ", formDataObject);
+
+    // Proceed with submitting the form (fetch or AJAX)
+    fetch(event.target.action, {
+        method: 'POST',
+        body: new URLSearchParams(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.result === 'success') {
+            console.log('Form successfully submitted!');
+            // Handle successful submission (e.g., show success message)
+        } else {
+            console.error('Form submission error:', data.error);
+        }
+    })
+    .catch(error => {
+        console.error('Error during submission:', error);
+    });
 }
+
