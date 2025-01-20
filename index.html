@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="SACSU KNUST New Members Form">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://sacsuknust-form.vercel.app/">
     <meta property="og:title" content="DessyInc">
     <title>SACSU KNUST Form</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-   
 </head>
 <body>
     <div class="preloader">
@@ -68,10 +70,10 @@
       </tr>
       
       <!-- Residence Field (Initially Hidden) -->
-      <tr id="residence-row" style="display: none;">
+      <tr id="residence-row-1" style="display: none;">
         <th><label for="residence">Place of Residence:</label></th>
       </tr>
-      <tr id="residence-input-row" style="display: none;">
+      <tr id="residence-input-row-1" style="display: none;">
         <td><input type="text" placeholder="Eg: Unity Hall-On Campus or Victory Towers-Ayeduase..." id="residence" name="residence"></td>
       </tr>
 
@@ -114,14 +116,6 @@
       <tr>
         <td><input type="text" placeholder="Which Saviour Church Branch are you from" id="branch" name="branch" required></td>
       </tr>
-      
-      <!-- Residence Field (Initially Hidden) -->
-      <tr id="residence-row" style="display: none;">
-        <th><label for="residence">Place of Residence:</label></th>
-      </tr>
-      <tr id="residence-input-row" style="display: none;">
-        <td><input type="text" placeholder="Your Place of Residence" id="residence" name="residence"></td>
-      </tr>
     </table>
     <br>
     <!-- Submit Button -->
@@ -129,11 +123,12 @@
   </div>
   
   <!-- Success Message -->
-  <div id="success-message">
+  <div id="success-message" style="display:none;">
     <h2>Thank you! Your form has been successfully submitted.</h2>
   </div>
 </form>
 
 <script src="script.js"></script>
+
 </body>
 </html>

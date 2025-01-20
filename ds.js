@@ -1,3 +1,5 @@
+
+    // Preloader Handling
     document.addEventListener('DOMContentLoaded', function () {
         setTimeout(function () {
             var preloader = document.querySelector('.preloader');
@@ -11,6 +13,7 @@
         }, 4000);
     });
 
+    // Confetti Effect (If needed)
     function createConfetti() {
         const confettiContainer = document.querySelector('.confetti-container');
         for (let i = 0; i < 30; i++) {
@@ -30,14 +33,16 @@
         }
     }
 
+    // Trigger Confetti Effect at Intervals
     setInterval(() => {
         createConfetti();
     }, 65000);
 
+    // Show Residence Field Based on Academic Year
     function checkLevel100() {
         const academicYear = document.getElementById("academic-year").value;
-        const residenceRow = document.getElementById("residence-row");
-        const residenceInputRow = document.getElementById("residence-input-row");
+        const residenceRow = document.getElementById("residence-row-1");
+        const residenceInputRow = document.getElementById("residence-input-row-1");
         if (academicYear === "1") {
             residenceRow.style.display = "";
             residenceInputRow.style.display = "";
@@ -49,17 +54,18 @@
         }
     }
 
+    // Handle Form Submission and Display Success Message
     function handleSubmit(event) {
-        event.preventDefault();
+        event.preventDefault(); // Prevent actual form submission
         const form = document.getElementById("sacsuForm25");
 
-        // Display success message
+        // Show Success Message
         const successMessage = document.getElementById("success-message");
         successMessage.style.display = "block";
         setTimeout(() => {
             successMessage.style.display = "none";
-        }, 5000);
+        }, 5000); // Hide after 5 seconds
 
-        // After submission, clear the form
+        // Optionally clear the form
         form.reset();
     }
