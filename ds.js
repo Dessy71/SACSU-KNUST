@@ -49,3 +49,19 @@ function createConfetti() {
   setInterval(() => {
     createConfetti();
   }, 65000);
+
+  function checkLevel100() {
+    const academicYear = document.getElementById("academic-year").value;
+    const residenceRow = document.getElementById("residence-row");
+    const residenceInputRow = document.getElementById("residence-input-row");
+    
+    if (academicYear === "1") {
+      residenceRow.style.display = "";
+      residenceInputRow.style.display = "";
+      document.getElementById("residence").required = true;
+    } else {
+      residenceRow.style.display = "none";
+      residenceInputRow.style.display = "none";
+      document.getElementById("residence").required = false;
+    }
+  }
