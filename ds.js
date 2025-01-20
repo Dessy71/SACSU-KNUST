@@ -78,7 +78,18 @@ function handleSubmit(event) {
     .then(data => {
         if (data.result === 'success') {
             console.log('Form successfully submitted!');
-            // Handle successful submission (e.g., show success message)
+            
+            // Show the success message
+            const successMessage = document.getElementById("success-message");
+            successMessage.style.display = "block"; // Show the success message
+
+            // Hide the success message after 5 seconds
+            setTimeout(() => {
+                successMessage.style.display = "none";
+            }, 5000); // Hide after 5 seconds
+
+            // Clear the form fields
+            event.target.reset();
         } else {
             console.error('Form submission error:', data.error);
         }
@@ -87,4 +98,3 @@ function handleSubmit(event) {
         console.error('Error during submission:', error);
     });
 }
-
