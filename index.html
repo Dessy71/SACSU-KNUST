@@ -30,8 +30,8 @@
 <div class="confetti-container"></div>
 
 <form id="sacsuForm25" name="sacsuForm25" 
-      action="https://script.google.com/macros/s/AKfycbw0mN0C59IxakbOVcf8-pTaAXBuW6pVgVeO8x-MflVCX0zjl0IZOcPNm_L2OVCdJeam/exec" 
-      method="post" target="_self" onsubmit="">
+      action="https://script.google.com/macros/s/AKfycbw0mN0C59IxakbOVcf8-pTaAXBuW6pVgVeO8x-MflVCX0zjl0IZOcPNm_L2OVCdJeam/exec"
+     method="post" target="_self" onsubmit="">
   
   <table>
     <!-- Student's Name -->
@@ -57,7 +57,7 @@
     <tr>
       <td>
         <div class="select-wrapper">
-          <select id="academic-year" name="academic-year" required>
+          <select id="academic-year" name="academic-year" required onchange="checkLevel100()">
             <option value="" disabled selected>Select Academic Year</option>
             <option value="1">Level 100</option>
             <option value="2">Level 200</option>
@@ -109,13 +109,15 @@
     <tr>
       <td><input type="text" placeholder="Which Saviour Church Branch are you from" id="branch" name="branch" required></td>
     </tr>
+    
+    <!-- Residence Field (Initially Hidden) -->
+    <tr id="residence-row" style="display: none;">
+      <th><label for="residence">Place of Residence:</label></th>
+    </tr>
+    <tr id="residence-input-row" style="display: none;">
+      <td><input type="text" placeholder="Your Place of Residence" id="residence" name="residence"></td>
+    </tr>
   </table>
-
-  <br>
-  <!-- Submit Button -->
-  <button type="submit" id="btn">Submit</button>
-</form>
-
     <!-- Include tsParticles library -->
     
     <script src="ds.js"></script>
