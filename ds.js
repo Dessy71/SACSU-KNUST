@@ -1,18 +1,21 @@
+ // Wait for the document to fully load
+ document.addEventListener('DOMContentLoaded', function () {
+    // Wait for 10 seconds and then fade out the preloader
+    setTimeout(function () {
+        var preloader = document.querySelector('.preloader');
+        var mainContent = document. querySelector('.main-content');
 
+        // Fade out the preloader
+        preloader.style.opacity = 0;
 
-    // Preloader Handling
-    document.addEventListener('DOMContentLoaded', function () {
+        // Set a timeout to hide the preloader after the fade out animation
         setTimeout(function () {
-            var preloader = document.querySelector('.preloader');
-            var mainContent = document.querySelector('.main-content');
-
-            preloader.style.opacity = 0;
-            setTimeout(function () {
-                preloader.style.display = 'none';
-                mainContent.style.display = 'block';
-            }, 1000);
-        }, 4000);
-    });
+            preloader.style.display = 'none';
+            // Show the main content
+            mainContent.style.display = 'block';
+        }, 1000); // 1000ms = 1s (duration of the fade out animation)
+    }, 4000); // 10000ms = 10s (time before fading out)
+});
 
     // Confetti Effect (If needed)
     function createConfetti() {
