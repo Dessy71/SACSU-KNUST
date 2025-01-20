@@ -8,96 +8,132 @@
     <meta property="og:title" content="DessyInc">
     <title>SACSU KNUST Form</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-
+   
 </head>
 <body>
     <div class="preloader">
-        <img src="pre.svg" alt="Loading...">
+        <img src="pre.svg" alt="Preloader Image">
     </div>
-
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="https://dessy-portfolio.vercel.app/">
-                    <img src="logo.svg" alt="Your Logo">
-                </a>
-            </div>
-        </nav>
-    </header>
-
-    <div class="confetti-container"></div>
-
-    <form id="sacsuForm25" name="sacsuForm25" 
-          action="https://script.google.com/macros/s/AKfycbxz_GwbeH4zP8T9eZyoouoaxKYJdL_XYCZOCredfJwmPVJSVTqlwJxSxFFxEwK593fo/exec" 
-          method="post" target="_self" onsubmit="handleSubmit(event)">
-        <div id="form-content">
-            <table>
-                <!-- Student's Name -->
-                <tr>
-                    <th><label for="name">Student's Name:</label></th>
-                </tr>
-                <tr>
-                    <td><input type="text" placeholder="Surname First Name" id="name" name="name" required></td>
-                </tr>
-
-                <!-- Student's Programme -->
-                <tr>
-                    <th><label for="programme">Student's Programme:</label></th>
-                </tr>
-                <tr>
-                    <td><input type="text" id="programme" name="programme" required></td>
-                </tr>
-
-                <!-- Academic Year -->
-                <tr>
-                    <th><label for="academic-year">Academic Year:</label></th>
-                </tr>
-                <tr>
-                    <td>
-                        <select id="academic-year" name="academic-year" required onchange="checkLevel100()">
-                            <option value="" disabled selected>Select Academic Year</option>
-                            <option value="1">Level 100</option>
-                            <option value="2">Level 200</option>
-                            <option value="3">Level 300</option>
-                            <option value="4">Level 400</option>
-                            <option value="5">Level 500</option>
-                            <option value="6">Level 600</option>
-                        </select>
-                    </td>
-                </tr>
-
-                <!-- Place of Residence -->
-                <tr id="residence-row" style="display: none;">
-                    <th><label for="residence">Place of Residence:</label></th>
-                </tr>
-                <tr id="residence-input-row" style="display: none;">
-                    <td><input type="text" placeholder="E.g., Unity Hall - On Campus or Evandy - Ayeduase..." id="residence" name="residence"></td>
-                </tr>
-
-                <!-- Other Fields -->
-                <tr>
-                    <th><label for="contact">Contact:</label></th>
-                </tr>
-                <tr>
-                    <td><input type="text" id="contact" name="contact" required></td>
-                </tr>
-
-                <tr>
-                    <th><label for="email">Email:</label></th>
-                </tr>
-                <tr>
-                    <td><input type="email" id="email" name="email" required></td>
-                </tr>
-            </table>
-            <button type="submit" id="btn">Submit</button>
+<header>
+    <nav>
+        <div class="logo">
+            <a href="https://dessy-portfolio.vercel.app/">
+                <img src="logo.svg" alt="Your Logo">
+            </a>
         </div>
+    </nav>
+</header>
+<div class="confetti-container"></div>
 
-        <!-- Success Message -->
-        <div id="success-message">
-            <h2>Thank you! Your form has been successfully submitted.</h2>
-        </div>
-    </form>
+<form id="sacsuForm25" name="sacsuForm25" 
+      action="https://script.google.com/macros/s/AKfycbxz_GwbeH4zP8T9eZyoouoaxKYJdL_XYCZOCredfJwmPVJSVTqlwJxSxFFxEwK593fo/exec" 
+      method="post" target="_self" onsubmit="handleSubmit(event)">
+  
+  <div id="form-content">
+    <table>
+      <!-- Student's Name -->
+      <tr>
+        <th><label for="name">Student's Name:</label></th>
+      </tr>
+      <tr>
+        <td><input type="text" placeholder="Surname First Name" id="name" name="name" required></td>
+      </tr>
+      
+      <!-- Student's Programme -->
+      <tr>
+        <th><label for="programme">Student's Programme:</label></th>
+      </tr>
+      <tr>
+        <td><input type="text" id="programme" name="programme" required></td>
+      </tr>
+      
+      <!-- Academic Year -->
+      <tr>
+        <th><label for="academic-year">Academic Year:</label></th>
+      </tr>
+      <tr>
+        <td>
+          <div class="select-wrapper">
+            <select id="academic-year" name="academic-year" required onchange="checkLevel100()">
+              <option value="" disabled selected>Select Academic Year</option>
+              <option value="1">Level 100</option>
+              <option value="2">Level 200</option>
+              <option value="3">Level 300</option>
+              <option value="4">Level 400</option>
+              <option value="5">Level 500</option>
+              <option value="6">Level 600</option>
+            </select>
+          </div>
+        </td>
+      </tr>
+      
+      <!-- Residence Field (Initially Hidden) -->
+      <tr id="residence-row" style="display: none;">
+        <th><label for="residence">Place of Residence:</label></th>
+      </tr>
+      <tr id="residence-input-row" style="display: none;">
+        <td><input type="text" placeholder="Eg: Unity Hall-On Campus or Victory Towers-Ayeduase..." id="residence" name="residence"></td>
+      </tr>
 
-    <script src="ds.js"></script>
+      <!-- Contact -->
+      <tr>
+        <th><label for="contact">Contact:</label></th>
+      </tr>
+      <tr>
+        <td><input type="text" placeholder="Active Mobile Number" id="contact" name="contact" required></td>
+      </tr>
+      
+      <!-- Student's Email -->
+      <tr>
+        <th><label for="email">Student's Email:</label></th>
+      </tr>
+      <tr>
+        <td><input type="email" id="email" name="email" required></td>
+      </tr>
+      
+      <!-- WhatsApp Number -->
+      <tr>
+        <th><label for="whatsapp">WhatsApp Number:</label></th>
+      </tr>
+      <tr>
+        <td><input type="text" placeholder="Active WhatsApp Number" id="whatsapp" name="whatsApp" required></td>
+      </tr>
+      
+      <!-- SCG Zone -->
+      <tr>
+        <th><label for="zone">SCG Zone:</label></th>
+      </tr>
+      <tr>
+        <td><input type="text" placeholder="Which Saviour Church Zone are you from" id="zone" name="zone" required></td>
+      </tr>
+      
+      <!-- SCG Branch -->
+      <tr>
+        <th><label for="branch">SCG Branch:</label></th>
+      </tr>
+      <tr>
+        <td><input type="text" placeholder="Which Saviour Church Branch are you from" id="branch" name="branch" required></td>
+      </tr>
+      
+      <!-- Residence Field (Initially Hidden) -->
+      <tr id="residence-row" style="display: none;">
+        <th><label for="residence">Place of Residence:</label></th>
+      </tr>
+      <tr id="residence-input-row" style="display: none;">
+        <td><input type="text" placeholder="Your Place of Residence" id="residence" name="residence"></td>
+      </tr>
+    </table>
+    <br>
+    <!-- Submit Button -->
+    <button type="submit" id="btn">Submit</button>
+  </div>
+  
+  <!-- Success Message -->
+  <div id="success-message">
+    <h2>Thank you! Your form has been successfully submitted.</h2>
+  </div>
+</form>
+
+<script src="script.js"></script>
 </body>
 </html>
