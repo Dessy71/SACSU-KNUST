@@ -65,3 +65,15 @@ function createConfetti() {
       document.getElementById("residence").required = false;
     }
   }
+function handleSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission
+    
+    // Hide the form content and show the success message
+    document.getElementById('form-content').style.display = 'none';
+    document.getElementById('success-message').style.display = 'block';
+    
+    // Wait 2.5 seconds, then redirect
+    setTimeout(function() {
+      window.location.href = "https://dessy-portfolio.vercel.app/"; // Replace with your desired URL
+    }, 2500);
+  }
