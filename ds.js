@@ -86,7 +86,7 @@ function handleSubmit(event) {
             // Hide the success message after 5 seconds
             setTimeout(() => {
                 successMessage.style.display = "none";
-            }, 1500); // Hide after 5 seconds
+            }, 500); // Hide after 5 seconds
 
             // Clear the form fields
             event.target.reset();
