@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="SACSU KNUST New Members Form">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://sacsuknust-form.vercel.app/">
-    <meta property="og:title" content="DessyInc">
-    <title>SACSU KNUST Form</title>
+    <meta
+    name="description"
+    content="SACSU KNUST New Members Form"/>
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://sacsuknust-form.vercel.app/" />
+  <meta property="og:title" content="DessyInc" />
+    <title>Sacsu Knust Form</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="preloader">
+        <!-- Your preloader content goes here -->
         <img src="pre.svg" alt="Preloader Image">
     </div>
 <header>
     <nav>
         <div class="logo">
             <a href="https://dessy-portfolio.vercel.app/">
-                <img src="logo.svg" alt="Your Logo">
+                <img src="logo.svg" alt="Your Logo" />
             </a>
+            
         </div>
-    </nav>
+    
+</nav>
 </header>
 <div class="confetti-container"></div>
 
 <form id="sacsuForm25" name="sacsuForm25" 
-      action="https://script.google.com/macros/s/AKfycbxz_GwbeH4zP8T9eZyoouoaxKYJdL_XYCZOCredfJwmPVJSVTqlwJxSxFFxEwK593fo/exec" 
+      action="https://script.google.com/macros/s/AKfycbw0mN0C59IxakbOVcf8-pTaAXBuW6pVgVeO8x-MflVCX0zjl0IZOcPNm_L2OVCdJeam/exec" 
       method="post" target="_self" onsubmit="handleSubmit(event)">
   
   <div id="form-content">
@@ -69,13 +71,13 @@
         </td>
       </tr>
       
-      <!-- Residence Field (Initially Hidden) -->
-      <tr id="residence-row-1" style="display: none;">
-        <th><label for="residence">Place of Residence:</label></th>
-      </tr>
-      <tr id="residence-input-row-1" style="display: none;">
-        <td><input type="text" placeholder="Eg: Unity Hall-On Campus or Victorry Towers-Ayeduase..." id="residence" name="residence"></td>
-      </tr>
+  <!-- Residence Field (Initially Hidden) -->
+    <tr id="residence-row" style="display: none;">
+      <th><label for="residence">Place of Residence:</label></th>
+    </tr>
+    <tr id="residence-input-row" style="display: none;">
+      <td><input type="text" placeholder="Eg: Unity Hall-On Campus or Victory Towers-Ayeduase..." id="residence" name="residence"></td>
+    </tr>
 
       <!-- Contact -->
       <tr>
@@ -116,6 +118,14 @@
       <tr>
         <td><input type="text" placeholder="Which Saviour Church Branch are you from" id="branch" name="branch" required></td>
       </tr>
+      
+      <!-- Residence Field (Initially Hidden) -->
+      <tr id="residence-row" style="display: none;">
+        <th><label for="residence">Place of Residence:</label></th>
+      </tr>
+      <tr id="residence-input-row" style="display: none;">
+        <td><input type="text" placeholder="Your Place of Residence" id="residence" name="residence"></td>
+      </tr>
     </table>
     <br>
     <!-- Submit Button -->
@@ -123,12 +133,12 @@
   </div>
   
   <!-- Success Message -->
-  <div id="success-message" style="display:none;">
+  <div id="success-message" style="display: none; text-align: center;">
     <h2>Thank you! Your form has been successfully submitted.</h2>
   </div>
 </form>
-
-<script src="script.js"></script>
-
+    <!-- Include tsParticles library -->
+    
+    <script src="ds.js"></script>
 </body>
 </html>
