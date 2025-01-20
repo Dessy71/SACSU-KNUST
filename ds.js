@@ -1,79 +1,46 @@
-// Wait for the document to fully load
 document.addEventListener('DOMContentLoaded', function () {
-    // Wait for 10 seconds and then fade out the preloader
     setTimeout(function () {
-        var preloader = document.querySelector('.preloader');
-        var mainContent = document. querySelector('.main-content');
+        const preloader = document.querySelector('.preloader');
+        const mainContent = document.querySelector('.main-content');
 
-        // Fade out the preloader
         preloader.style.opacity = 0;
-
-        // Set a timeout to hide the preloader after the fade out animation
         setTimeout(function () {
             preloader.style.display = 'none';
-            // Show the main content
             mainContent.style.display = 'block';
-        }, 1000); // 1000ms = 1s (duration of the fade out animation)
-    }, 4000); // 10000ms = 10s (time before fading out)
+        }, 1000);
+    }, 4000);
 });
 
-function createConfetti() {
-    const confettiContainer = document.querySelector('.confetti-container');
-
-    // Create multiple confetti particles (e.g., 50 particles)
-    for (let i = 0; i < 30; i++) {
-      const confetti = document.createElement('div');
-      confetti.classList.add('confetti');
-
-      // Randomly position confetti horizontally and vertically
-      const randomPositionX = Math.random() * 100;
-      const randomPositionY = Math.random() * 100;
-      confetti.style.left = randomPositionX + 'vw';
-      confetti.style.top = randomPositionY + 'vh';
-
-      // Randomly apply colors to the confetti particles
-      const colors = ['confetti-blue', 'confetti-violet', 'confetti-pink', 'confetti-white', 'confetti-gold'];
-      const randomColor = colors[Math.floor(Math.random() * colors.length)];
-      confetti.classList.add(randomColor);
-
-      confettiContainer.appendChild(confetti);
-
-      // Remove confetti after animation completes
-      confetti.addEventListener('animationend', () => {
-        confetti.remove();
-      });
-    }
-  }
-
-  // Call the createConfetti function every 30 seconds (30000 milliseconds)
-  setInterval(() => {
-    createConfetti();
-  }, 65000);
-
-  function checkLevel100() {
-    const academicYear = document.getElementById("academic-year").value;
-    const residenceRow = document.getElementById("residence-row");
-    const residenceInputRow = document.getElementById("residence-input-row");
-    
-    if (academicYear === "1") {
-      residenceRow.style.display = "";
-      residenceInputRow.style.display = "";
-      document.getElementById("residence").required = true;
-    } else {
-      residenceRow.style.display = "none";
-      residenceInputRow.style.display = "none";
-      document.getElementById("residence").required = false;
-    }
-  }
 function handleSubmit(event) {
-    event.preventDefault(); // Prevent the default form submission
-    
-    // Hide the form content and show the success message
-    document.getElementById('form-content').style.display = 'none';
-    document.getElementById('success-message').style.display = 'block';
-    
-    // Wait 2.5 seconds, then redirect
-    setTimeout(function() {
-      window.location.href = "https://dessy-portfolio.vercel.app/"; // Replace with your desired URL
-    }, 2500);
-  }
+    event.preventDefault();
+
+    const form = event.target;
+
+    // Create a FormData object for AJAX submission
+    const formData = new FormData(form);
+
+    // Send data to Google Apps Script
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.result === 'success') {
+                // Hide the form and show success message
+                document.getElementById('form-content').style.display = 'none';
+                document.getElementById('success-message').style.display = 'block';
+
+                // Redirect after 2.5 seconds
+                setTimeout(() => {
+                    window.location.href = "https://dessy-portfolio.vercel.app/";
+                }, 2500);
+            } else {
+                alert('Error: ' + data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An unexpected error occurred. Please try again.');
+        });
+}
